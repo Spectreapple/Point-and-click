@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>point and click adventure</title>
+    <title>Point and Click adventure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Shrikhand&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body id="main">
 
+<body>
+    <h1 id="mainTitle"></h1>
     <div id="gameWindow">
-        <!--foreground-->
-        <div id="door1" class="foreground"></div>
-        <div id="door2" class="foreground"></div>
-        <!--character-->
-        <div id="mainCharacter" class="character">
-            <div id="mainCharacterSpeech"class="speech-bubble">.....</div>
-            <img src="img/slime-base.png" alt="character">
+        <!--Foreground-->
+
+        <div id="dialogBar" class="foreground">
+            <img id="hero" class="foreground" src="img/speech box point and click.png" alt="portrait">
+            <div id="mainCharacterSpeech" class="foreground speech-bubble">...</div>
+            <div id="brownBar"></div>
         </div>
 
+        <div id="tree1" class="foreground">
+            <img id="tree" src="img/tree1.png" alt="It's a tree">
+        </div>
 
-        <!--background-->
-    <div id="tilemap" class="background">
-        <img src="img/world html.jpg" alt="tile map1">
+        <div id="door1" class="foreground"></div>
+        <div id="door2" class="foreground"></div>
+        <!-- Character -->
+        <div id="mainCharacter" class="character">
+            <img src="img/slime-base.png" alt="main character">
+        </div>
+        <!-- Background -->
+        <div id="tilemap" class="background">
+            <img src="img/world html.jpg" alt="tilemap 1">
+        </div>
     </div>
 
-
-
-    </div>
-
-
-    <h1 id="mainTitle"> </h1>
     <audio id="characterAudio">
-        <sources src="/audio/Audio js/high pitch voice.mp3" type="audio/mpeg">
-        </sources>
+        <source src="audio/Roblox Boing Sound.mp3" type="audio/mpeg">
     </audio>
-    <script src="js/index.js"></script>
 
+    <script src="js/index.js"></script>
 </body>
+
 </html>
