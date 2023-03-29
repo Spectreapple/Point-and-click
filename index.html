@@ -17,14 +17,21 @@
 <body>
     <h1 id="mainTitle"></h1>
     <div id="gameWindow">
-        <!--Foreground-->
 
-        <div id="dialogBar" class="foreground">
-            <img id="hero" class="foreground" src="img/speech box point and click.png" alt="portrait">
-            <div id="mainCharacterSpeech" class="foreground speech-bubble">...</div>
-            <div id="brownBar"></div>
+        <!--dialogue bar-->
+        <div id="dialogueBar" class="foreground">
+            <div id="setMainDialog">
+                <img id="hero" class="foreground" src="img/CharacterPortrait.png" alt="portrait">
+                <div id="mainCharacterSpeech" class="foreground speech-bubble">...</div>
+
+                <div id="counterSpeech" class="foreground speech-bubble">...</div>
+                <img id="counterCharacter" class="foreground" src="img/CowSpeech.png" alt="The other person">
+                <div id="brownBar"></div>
+            </div>
         </div>
 
+
+        <!--Foreground-->
         <div id="tree1" class="foreground">
             <img id="tree" src="img/tree1.png" alt="It's a tree">
         </div>
@@ -37,12 +44,18 @@
         </div>
         <!-- Background -->
         <div id="tilemap" class="background">
-            <img src="img/world html.jpg" alt="tilemap 1">
+            <img src="img/world html.png" alt="tilemap 1">
         </div>
+        <div id="statue" class="foreground"></div>
     </div>
 
+    <!--Audio of main character and counter character-->
     <audio id="characterAudio">
         <source src="audio/Roblox Boing Sound.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="counterAudio">
+        <source src="audio/VineBoom.mp3" type="audio/mpeg">
     </audio>
 
     <script src="js/index.js"></script>
