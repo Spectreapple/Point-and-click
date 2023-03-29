@@ -24,21 +24,21 @@ gameWindow.onclick = function (e) {
         switch (e.target.id) {
             case "door1":
                 //something insert here
-                showSpeech(mainCharacterSpeech, characterAudio, "this is door one.<br> And it's locked dummy...");
+                showSpeech(mainCharacterSpeech, characterAudio, "A chest <br> i wonder whats inside");
                 break;
             case "door2":
                 //something insert here
-                showSpeech(mainCharacterSpeech, characterAudio, "noboby is home...<br> Come back later..");
+                showSpeech(mainCharacterSpeech, characterAudio, "It's no time for bed");
                 break;
             case "tree":
                 //something insert here
-                showSpeech(mainCharacterSpeech, characterAudio, "Nice tree... looking good.. You come here often? nudge nudge...");
+                showSpeech(mainCharacterSpeech, characterAudio, "This is my lucky tree! <br> it gives me good apples..");
                 break;
             case "statue":
                 //something insert here
-                showSpeech(mainCharacterSpeech, characterAudio, "Ey what's up cow");
+                showSpeech(mainCharacterSpeech, characterAudio, "Hey what's up cow");
                 setTimeout(function () { counterCharacter.style.opacity = 1; }, 4 * sec);
-                setTimeout(showSpeech, 4 * sec, counterSpeech, counterAudio, "did You just call me fat?");
+                setTimeout(showSpeech, 4 * sec, counterSpeech, counterAudio, "did You just call me fat? !!MOOOOO!!");
                 setTimeout(showSpeech, 8 * sec, mainCharacterSpeech, characterAudio, "No WHAT DO YOU MEAN");
                 break;
             default:
