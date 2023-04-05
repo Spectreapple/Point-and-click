@@ -6,10 +6,15 @@ const gameWindow = document.getElementById("gameWindow");
 const sec = 1000;
 
 let tempTimeOut;
+//Items
+const ruby = document.getElementById("Wheat");
+
 
 //Main character
 const mainCharacter = document.getElementById("mainCharacter");
 const characterAudio = document.getElementById("characterAudio");
+const chestAudio = document.getElementById("chestAudio");
+const confettiAudio = document.getElementById("confettiAudio");
 const mainCharacterSpeech = document.getElementById("mainCharacterSpeech");
 
 //Counter character
@@ -34,38 +39,60 @@ gameWindow.onclick = function (e) {
         switch (e.target.id) {
             case "door1":
                 //something insert here
-                if (checkItem("Chest key")) {
-                    showMessage(mainCharacterSpeech, characterAudio, "This key fits<br>the chest opened.");
+                if (checkItem("mysterious key")) {
+                    showMessage(mainCharacterSpeech, chestAudio, "You stick the key in the chest<br>it opened..");
+                    setTimeout(showMessage, 4 * sec, mainCharacterSpeech, characterAudio, "Oh some wheat ,maybe the cow will like this..");
+                    removeItem("mysterious key", "mysterious key");
+                    setTimeout(getItem, 4 * sec, "Wheat", "Wheat");
                 } else {
-                    showMessage(mainCharacterSpeech, characterAudio, "It's a chest<br>but it's locked...");
-
+                    showMessage(mainCharacterSpeech, characterAudio, "cool a chest<br>but looks like it needs a key...");
                 }
+
                 break;
             case "door2":
                 //something insert here
-                showMessage(mainCharacterSpeech, characterAudio, "It is no time to sleep....");
+                showMessage(mainCharacterSpeech, characterAudio, "Now is no time to sleep...");
                 break;
             case "tree":
                 //something insert here
-                showMessage(mainCharacterSpeech, characterAudio, "This is my lucky tree<br>it gives good apples..");
+                showMessage(mainCharacterSpeech, characterAudio, "This is my favorite apple tree...");
                 break;
             case "signToLeft":
                 //something insert here
-                showMessage(mainCharacterSpeech, characterAudio, "Oh look a broken tree in the water<br>i wonder what i can do to help...");
+                showMessage(mainCharacterSpeech, characterAudio, "What da tree doin???");
                 break;
-            case "statue":
-                counterPortrait.style.opacity = 1;
-                showMessage(mainCharacterSpeech, characterAudio, "What is this for statue?");
-                setTimeout(showMessage, 4 * sec, counterSpeech, counterAudio, "Finaly someone to talk to");
-                setTimeout(showMessage, 8 * sec, mainCharacterSpeech, characterAudio, "What do you mean? Statues are not supose to talk anyway..");
-                setTimeout(showMessage, 12 * sec, counterSpeech, counterAudio, "You should check one off the graves");
-                setTimeout(function () { counterPortrait.style.opacity = 0; }, 16 * sec);
-                setTimeout(showMessage, 16 * sec, mainCharacterSpeech, characterAudio, "Wait! What?");
+            case "stone":
+                if (!checkItem("Wheat")) {
+                    showMessage(mainCharacterSpeech, characterAudio, "Some sort of pilar.. And there are runes embeded.");
+                } else {
+                    showMessage(mainCharacterSpeech, characterAudio, "Wow. I feel light headed..");
+                }
                 break;
+
+                case "statue":
+                    if (checkItem("Wheat")) {
+                        counterPortrait.style.opacity = 1;
+                        showMessage(mainCharacterSpeech, characterAudio, "Here MR Cow some wheat...");
+                        setTimeout(showMessage, 4 * sec, counterSpeech, confettiAudio, "you finished my quest<br>Nom Nom Nom Nom");
+                        setTimeout(function () { counterPortrait.style.opacity = 0; }, 8 * sec);
+                        removeItem("Wheat", "Wheat");
+    
+                    } else {
+                        counterPortrait.style.opacity = 1;
+                    showMessage(mainCharacterSpeech, characterAudio, "Hey MR Cow <br> how's it going?");
+                    setTimeout(showMessage, 4 * sec, counterSpeech, counterAudio, "MOOOOOOOO");
+                    setTimeout(showMessage, 8 * sec, mainCharacterSpeech, characterAudio, "Yeah that helps alot thanks...");
+                    setTimeout(showMessage, 12 * sec, counterSpeech, counterAudio, "MOOOOOO 'Across the river look in the bushes for a key'");
+                    setTimeout(function () { counterPortrait.style.opacity = 0; }, 16 * sec);
+                    setTimeout(showMessage, 16 * sec, mainCharacterSpeech, characterAudio, "What's that weird voice i just heard?<br>I better go check that out then..");
+                    }
+                    break;
+                    
+
             case "grave":
-                if (!checkItem("Chest key")) {
-                    getItem("Chest key", "ChestKey");
-                    showMessage(mainCharacterSpeech, characterAudio, "Wow I found a rusty key!<br>Must been lying here for ages..");
+                if (!checkItem("mysterious key")) {
+                    getItem("mysterious key", "mysterious key");
+                    showMessage(mainCharacterSpeech, characterAudio, "'I reached in the bush to grab a key'<br>it looks like it might fit somewhere...");
                     setTimeout(hideMessage, 4 * sec, mainCharacterSpeech, characterAudio);
                 } else {
                     showMessage(mainCharacterSpeech, characterAudio, "Nope nothing here...");

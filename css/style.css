@@ -49,55 +49,58 @@ p {
 }
 
 #door1 {
-    top: 287px;
-    left: 177px;
+    top: 245px;
+    left: 250px;
     width: 32px;
-    height: 64px;
-    background-color: #000;
+    height: 32px;
 
 }
 
 #door2 {
-    top: 64px;
+    top: 190px;
     left: 496px;
-    width: 32px;
-    height: 64px;
-    background-color: grey;
+    width: 16px;
+    height: 32px;
 }
 
 #statue {
-    top: 287px;
-    left: 703px;
+    top: 310px;
+    left: 400px;
     width: 32px;
-    height: 64px;
-    background-color: blue;
+    height: 32px;
 }
 
 #grave {
-    top: 482px;
+    top: 340px;
     left: 257px;
     width: 32px;
-    height: 64px;
-    background-color: #ffffff;
+    height: 16px;
 }
 
 #tree1 {
     top: 400px;
-    left: 667px;
+    left: 350px;
 }
 
 #signToLeft {
-    top: 351px;
-    left: 450px;
+    top: 270px;
+    left: 300px;
     width: 32px;
     height: 32px;
-    background-color: #442c1c;
 }
 
 #rubyContainer {
     top: 324px;
     left: 209px;
     opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+#stone {
+    top: 32px;
+    left: 223px;
+    width: 32px;
+    height: 64px;
 }
 
 #platform {
